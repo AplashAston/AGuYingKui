@@ -1,0 +1,22 @@
+# macOS 系统垃圾
+.DS_Store
+
+# Python 缓存和虚拟环境
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Node.js 依赖
+node_modules/
+
+# 构建输出 (不建议上传打包好的程序，只上传源码)
+dist/
+build/
+*.app/
+*.exe
+*.dmg
+
+# 环境变量 (包含 API Key 等敏感信息，绝对不能上传)
+.env

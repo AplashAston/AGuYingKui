@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A股盈亏复盘</title>
+  <link rel="icon" type="image/png" href="/icon.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Apple-like font smoothing & Utilities */
+    :root {
+      --ios-blue: #007AFF;
+      --ios-red: #FF3B30;
+      --ios-green: #34C759;
+      --ios-gray-bg: #F2F2F7;
+      --glass-border: rgba(255, 255, 255, 0.4);
+    }
+
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--ios-gray-bg);
+    }
+
+    /* Smooth scrolling & Hide scrollbars */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* Elegant Animations */
+    @keyframes slideUpFade {
+      from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.98);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .animate-enter {
+      animation: slideUpFade 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .animate-scale {
+      animation: scaleIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* Glassmorphism Utilities */
+    .glass {
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+    }
+
+    /* Staggered Animation Delays */
+    .delay-0 {
+      animation-delay: 0ms;
+    }
+
+    .delay-1 {
+      animation-delay: 50ms;
+    }
+
+    .delay-2 {
+      animation-delay: 100ms;
+    }
+
+    .delay-3 {
+      animation-delay: 150ms;
+    }
+
+    /* 确保关闭确认对话框居中 */
+    .modal-center {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+    }
+
+    /* 防止文本选择 */
+    .title-bar {
+      user-select: none;
+      -webkit-user-select: none;
+    }
+  </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0"
+  }
+}
+</script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+
+<body
+  class="bg-[#F2F2F7] text-slate-900 h-screen w-screen overflow-hidden selection:bg-blue-100 selection:text-blue-900">
+  <div id="root" class="h-full w-full"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+
+</html>
